@@ -89,7 +89,7 @@ class QuestionsController extends Controller
     public function getQuestions(Request $request)
     {
         $count = $request->count ?? 10;
-        $questions = Questions::inRandomOrder()->limit($count)->get();
+        $questions = Questions::inRandomOrder()->limit($count)->orderBy('id')->get();
         return response()->json([
             'success' => true,
             'questions' => $questions,
