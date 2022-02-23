@@ -91,6 +91,7 @@ class QuestionsController extends Controller
         $count = $request->count ?? 10;
         $questions = Questions::inRandomOrder()->limit($count)->get();
         return response()->json([
+            'success' => true,
             'questions' => $questions,
         ]);
     }
@@ -100,6 +101,7 @@ class QuestionsController extends Controller
         $ids = $request->questions->pluck('id');
         $answers = Answers::whereIn('id', $ids)->get();;
         return response()->json([
+            'success' => true,
             'answers' => $answers,
         ]);
     }

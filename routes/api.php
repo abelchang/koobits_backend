@@ -22,4 +22,5 @@ use App\Http\Controllers\QuestionsController;
 Route::group(['prefix' => 'fake'], function () {
     Route::post('/submitQuestion', [QuestionsController::class, 'submitQuestion']);
     Route::get('/getQuestions/{count}', [QuestionsController::class, 'getQuestions']);
+    Route::get('/getQuestions', [QuestionsController::class, 'getQuestions']);
 });
