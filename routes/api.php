@@ -20,7 +20,7 @@ use App\Http\Controllers\QuestionsController;
 // });
 
 Route::group(['prefix' => 'fake'], function () {
-    Route::post('/submitQuestion', [QuestionsController::class, 'submitQuestion']);
+    Route::post('/submitQuestions', [QuestionsController::class, 'submitQuestions']);
     Route::get('/getQuestions/{count}', [QuestionsController::class, 'getQuestions']);
     Route::get('/getQuestions', [QuestionsController::class, 'getQuestions']);
 });

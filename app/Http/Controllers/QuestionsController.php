@@ -96,7 +96,7 @@ class QuestionsController extends Controller
         ]);
     }
 
-    public function submitQuestion(Request $request)
+    public function submitQuestions(Request $request)
     {
         $ids = $request->answerResults->pluck('id');
         $answers = Answers::whereIn('id', $ids)->get();;
