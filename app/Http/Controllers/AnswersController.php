@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreanswersRequest;
 use App\Http\Requests\UpdateanswersRequest;
 use App\Models\answers;
+use Illuminate\Http\Request;
 
 class AnswersController extends Controller
 {
@@ -82,5 +83,15 @@ class AnswersController extends Controller
     public function destroy(answers $answers)
     {
         //
+    }
+
+    public function submitQuestions(Request $request)
+    {
+        $ids = collect($request->all()['answerResults'])->pluck('id');
+        $answers = Answers::whereIn('id', $ids)->get();
+        return response()->json([
+            'success' => true,
+            'answers' => $answers,
+        ]);
     }
 }

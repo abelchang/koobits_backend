@@ -96,13 +96,13 @@ class QuestionsController extends Controller
         ]);
     }
 
-    public function submitQuestions(Request $request)
-    {
-        $ids = $request->answerResults->pluck('id');
-        $answers = Answers::whereIn('id', $ids)->get();;
-        return response()->json([
-            'success' => true,
-            'answers' => $answers,
-        ]);
-    }
+    // public function submitQuestions(Request $request)
+    // {
+    //     $ids = $request->answerResults->pluck('id');
+    //     $answers = Answers::whereIn('id', $ids)->get();
+    //     return response()->json([
+    //         'success' => true,
+    //         'answers' => $answers,
+    //     ]);
+    // }
 }

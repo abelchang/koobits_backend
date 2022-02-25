@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\AnswersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Http\Controllers\QuestionsController;
 // });
 
 Route::group(['prefix' => 'fake'], function () {
-    Route::post('/submitQuestions', [QuestionsController::class, 'submitQuestions']);
+    Route::post('/submitQuestions', [AnswersController::class, 'submitQuestions']);
     Route::get('/getQuestions/{count}', [QuestionsController::class, 'getQuestions']);
     Route::get('/getQuestions', [QuestionsController::class, 'getQuestions']);
 });
